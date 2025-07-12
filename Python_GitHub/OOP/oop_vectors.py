@@ -2,6 +2,9 @@
 Creating a Module for Vectors
 Contains Basic Functions like add, sub, dot, cross, mag, etc.
 
+Also Has a Module for Projectiles
+Contains Functions to find Max Height, Time of Flight, Range, Time to reach Max Height etc.
+
 """
 
 import math
@@ -99,7 +102,7 @@ class Vector3:
 		return res
 
 
-
+# Class for Projectiles (2D)
 class Projectile:
 	def __init__(self, mag: float, angle: int):
 		self.mag = mag
@@ -131,28 +134,8 @@ class Projectile:
 
 		res = Vector2(x, y)
 
-		return res
+		return res # Returns a Vector2 form of the Projectile
 
 	def show(self):
-		return (self.mag, self.angle)
-
-
-
-# Some Vectors
-vec1 = Vector2(4.0, 3.0)
-vec2 = Vector2(4.0, 3.0)
-
-vec3 = Vector3(4.0, 5.0, 7.0)
-vec4 = Vector3(5.0, 2.0, -3.0)
-vec5 = Vector2(3.0, 3.0)
-
-# Test Usages
-print(vec1.mag()) # Show Magnitude of a Vector
-print(vec1.add(vec2).show())
-print(vec3.dot(vec4))
-crossVec = vec3.cross(vec4).show() # Show Resultant Vector's Components in Tuple Format
-print(vec5.getAngle()) # Show the Angle(in degrees) of the Vector w.r.t X-axis
-
-print(vec5.projectile().show())
-
+		return (self.mag, self.angle) # Returns a Tuple containing its Magnitude and Angle
 
